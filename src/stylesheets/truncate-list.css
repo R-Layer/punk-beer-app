@@ -1,0 +1,53 @@
+.key-header {
+  z-index: -20;
+  margin: 0.5rem;
+}
+
+.values-list {
+  position: relative;
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  height: 2rem;
+  z-index: 100;
+  background-color: #333;
+  color: white;
+  text-align: start;
+
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.values-list:hover {
+  white-space: pre-line;
+  text-overflow: inherit;
+}
+
+.values-list li {
+  padding: 0.5rem 1rem;
+  display: inline-block;
+  pointer-events: none;
+}
+
+.extended-list {
+  display: flex;
+  flex-flow: row wrap;
+  position: absolute;
+  z-index: 100;
+  pointer-events: none;
+
+  list-style-type: none;
+
+  padding: 0;
+  margin: 0;
+
+  background-color: #333;
+  color: white;
+
+  text-align: start;
+}
+
+.extended-list li {
+  padding: 0.5rem 1rem;
+}
