@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 
+import PopupList from "./PopupList";
+
 import "../stylesheets/truncate-list.css";
 
 class TruncateList extends Component {
@@ -16,7 +18,7 @@ class TruncateList extends Component {
 
     this.setState(
       prevState => ({
-        top: coords.top + window.pageYOffset,
+        top: coords.top + window.pageYOffset - 52,
         left: coords.left,
         hovering: !prevState.hovering,
         el: actualList
@@ -31,8 +33,6 @@ class TruncateList extends Component {
       el: this.state.el,
       coords: { left: this.state.left + "px", top: this.state.top + "px" }
     };
-
-    this.props.test(popupData);
   };
 
   listValues = valuesToList => {
@@ -60,6 +60,14 @@ class TruncateList extends Component {
           >
             {keyValues}
           </ul>
+          <PopupList
+            el={this.state.el}
+            coords={{
+              left: this.state.left + "px",
+              top: this.state.top + "px"
+            }}
+            inProp={this.state.hovering}
+          />
         </section>
       );
     });
@@ -68,11 +76,7 @@ class TruncateList extends Component {
 
   render() {
     const objectList = this.listKeys(this.props.elements);
-    return (
-      <div>
-        <div>{objectList}</div>
-      </div>
-    );
+    return <div>{objectList}</div>;
   }
 }
 

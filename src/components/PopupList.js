@@ -19,6 +19,7 @@ class PopupList extends Component {
 
   transitionStyles = {
     entering: { maxHeight: "400px" },
+    entered: { maxHeight: "400px" },
     exiting: { transition: `max-height ${this.DURATION_OUT}ms ease-in-out` }
   };
 

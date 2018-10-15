@@ -1,9 +1,12 @@
 import React, { Component } from "react";
 
-import Grid from "../components/Grid";
 import Tile from "../components/Tile";
-import PopupList from "../components/PopupList";
+import FlipMove from "react-flip-move";
 import FilterOutBox from "../components/FilterOutBox";
+
+import { connect } from "react-redux";
+
+import { changeFilterString } from "../redux/actions";
 
 import "../stylesheets/App.css";
 
@@ -30,31 +33,31 @@ class App extends Component {
     }));
   };
 
-  testApp = popupData => {
-    this.setState({
-      popupData
-    });
-  };
-
   render() {
-    const filterRegex = new RegExp(this.state.filterString, "i");
+    const filterRegex = new RegExp(this.props.filterPattern, "i");
     const filteredBeerTiles = this.state.beers
       .filter(beer => filterRegex.test(beer.id))
-      .map(beer => <Tile beer={beer} key={beer.id} test={this.testApp} />);
+      .map(beer => <Tile key={beer.id} beer={beer} />);
     return (
       <div className="App">
-        <FilterOutBox filterOut={this.filterOutBeers} />
-        <h3>{this.state.beers.length}</h3>
-        <Grid>{filteredBeerTiles}</Grid>
-
-        <PopupList
-          inProp={this.state.popupData.inProp}
-          el={this.state.popupData.el}
-          coords={this.state.popupData.coords}
-        />
+        <FilterOutBox filterOut={this.props.updateFilterString} />
+        <FlipMove className="grid" duration="500" staggerDurationBy="20">
+          {filteredBeerTiles}
+        </FlipMove>
       </div>
     );
   }
 }
 
-export default App;
+const mapStateToProps = state => ({
+  filterPattern: state.filterPattern
+});
+
+const mapDispatchToProps = dispatch => ({
+  updateFilterString: id => dispatch(changeFilterString(id))
+});
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(App);

@@ -1,3 +1,40 @@
+:root {
+  /*   --palette_2_first: #a12a2e;
+  --palette_2_second: #1b2f7b;
+  --palette_2_third: #f3ca28;
+  --palette_2_fourth: #6d6f72;
+  --palette_2_fifth: #aeafb2; 
+  
+  
+  --palette_2_first: #282de3;
+  --palette_2_second: #00aff2;
+  --palette_2_third: #0072f2;
+  --palette_2_fourth: #a4fd25;
+  --palette_2_fifth: #cef407; 
+  
+    --palette_2_first: #eff051;
+  --palette_2_second: #33ccd0;
+  --palette_2_third: #7539a9;
+  --palette_2_fourth: #ea5058;
+  --palette_2_fifth: #ff954d;
+
+  */
+
+  --palette_2_first: #00aff2;
+  --palette_2_second: #282de3;
+  --palette_2_third: #0072f2;
+  --palette_2_fourth: #a4fd25;
+  --palette_2_fifth: #cef407;
+}
+
 .App {
   text-align: center;
+  background-color: var(--palette_2_third);
+  min-height: 100vh;
+}
+.grid {
+  display: grid;
+  gap: 10px;
+  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+  padding: 2rem;
 }

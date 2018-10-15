@@ -10,12 +10,12 @@ class Tile extends Component {
     return (
       <li className="tile" key={beer.id}>
         <h2 className="tile-title">
-          {beer.name} - {beer.id}
+          {beer.name} - {`${beer.abv}%`}
         </h2>
         <img className="tile-img" src={beer.image_url} alt="beer-preview" />
         <p className="tile-description">{beer.description}</p>
         <div className="tile-details">
-          <TruncateList test={this.props.test} elements={beer.ingredients} />
+          <TruncateList elements={beer.ingredients} />
         </div>
       </li>
     );

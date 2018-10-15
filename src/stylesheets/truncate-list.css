@@ -1,6 +1,9 @@
 .key-header {
   z-index: -20;
   margin: 0.5rem;
+
+  background-color: var(--palette_2_fourth);
+  color: var(--palette_2_first);
 }
 
 .values-list {
@@ -10,8 +13,9 @@
   margin: 0;
   height: 2rem;
   z-index: 100;
-  background-color: #333;
-  color: white;
+
+  color: var(--palette_2_fifth);
+
   text-align: start;
 
   overflow: hidden;
@@ -22,6 +26,7 @@
 .values-list:hover {
   white-space: pre-line;
   text-overflow: inherit;
+  /* border-bottom: 1px solid var(--palette_2_fourth); */
 }
 
 .values-list li {
@@ -42,8 +47,8 @@
   padding: 0;
   margin: 0;
 
-  background-color: #333;
-  color: white;
+  background-color: var(--palette_2_second);
+  color: var(--palette_2_fifth);
 
   text-align: start;
 }
@@ -51,3 +56,22 @@
 .extended-list li {
   padding: 0.5rem 1rem;
 }
+/* 
+#a12a2e
+#1b2f7b
+#f3ca28
+#6d6f72
+#aeafb2
+
+#0072f2
+#00aff2
+#a4fd25
+#cef407
+#282de3
+
+#eff051
+#33ccd0
+#7539a9
+#ea5058
+#ff954d
+*/

@@ -9,9 +9,17 @@ body {
 }
 
 .tile {
-  border: 3px double #a49570;
+  height: 600px;
+  padding: 0.5rem;
 
-  /* padding: 1rem 2rem; */
+  font: 400 1rem Arial;
+
+  border: 3px double var(--palette_2_fifth);
+  border-radius: 1rem;
+
+  background-color: var(--palette_2_second);
+  color: var(--palette_2_fourth);
+
   display: grid;
 
   grid-template-columns: 1fr 2fr;
@@ -27,26 +35,27 @@ body {
 
 .tile-title {
   grid-area: title;
-  /* border: 1px solid red; */
+  color: var(--palette_2_fifth);
 }
 
 .tile-img {
-  max-width: 150px;
-  max-height: 250px;
+  max-width: 100px;
+  max-height: 200px;
   grid-area: img;
-  /* border: 1px solid blue; */
 }
 
 .tile-description {
   grid-area: description;
-  /* border: 1px solid green; */
+
+  padding: 1.5rem;
+
   align-self: start;
+  text-align: start;
   overflow: auto;
   height: 90%;
 }
 
 .tile-details {
-  margin-top: 2rem;
   align-self: end;
   grid-area: details;
   display: flex;
@@ -55,7 +64,5 @@ body {
 }
 
 .tile-details section {
-  border: 2px solid #333;
   width: 100%;
-  position: relative;
 }
